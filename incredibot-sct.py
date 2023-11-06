@@ -24,6 +24,7 @@ step_punishment = ((np.exp(steps_for_pun**3)/10) - 0.1)*10
 class IncrediBot(BotAI): # inhereits from BotAI (part of BurnySC2)
     async def on_step(self, iteration: int): # on_step is a method that is called every step of the game.
         no_action = True
+
         # while no_action:
         #     try:
         #         with open('state_rwd_action.pkl', 'rb') as f:
@@ -37,6 +38,29 @@ class IncrediBot(BotAI): # inhereits from BotAI (part of BurnySC2)
         #                 no_action = False
         #     except:
         #         pass
+        max_attempts = 10  # 최대 시도 횟수
+        attempts = 0
+        delay = 1  # 1초의 지연 시간
+
+        while no_action and attempts < max_attempts:
+            try:
+                with open('state_rwd_action.pkl', 'rb') as f:
+                    state_rwd_action = pickle.load(f)
+
+                    if state_rwd_action['action'] is None:
+                        # 액션이 None일 경우 대기
+                        attempts += 1
+                        time.sleep(delay)
+                    else:
+                        # 액션을 찾았을 경우 루프 종료
+                        no_action = False
+            except Exception as e:  # 파일 읽기 오류 발생 시
+                print(f"Error occurred: {e}")
+                attempts += 1
+                time.sleep(delay)
+
+        if attempts >= max_attempts:
+            print("Max attempts reached without finding an action.")
 
 
         await self.distribute_workers() # put idle workers back to work
