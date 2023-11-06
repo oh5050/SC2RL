@@ -1,0 +1,38 @@
+wandb_version: 1
+
+Model:
+  desc: null
+  value: v19
+Machine:
+  desc: null
+  value: Main
+policy:
+  desc: null
+  value: MlpPolicy
+model_save_name:
+  desc: null
+  value: '1699262115'
+_wandb:
+  desc: null
+  value:
+    code_path: code/trainppo.py
+    python_version: 3.11.5
+    cli_version: 0.15.12
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1699262288.525272
+    t:
+      1:
+      - 1
+      - 55
+      3:
+      - 16
+      - 23
+      - 35
+      4: 3.11.5
+      5: 0.15.12
+      8:
+      - 3
+      - 5
+      13: windows-amd64

@@ -1,0 +1,45 @@
+{
+    "os": "Windows-10-10.0.19045-SP0",
+    "python": "3.11.5",
+    "heartbeatAt": "2023-11-06T09:44:38.590355",
+    "startedAt": "2023-11-06T09:44:35.109848",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "c:\\Users\\User\\Documents\\GitHub\\SC2RL\\trainppo.py",
+    "codePathLocal": "trainppo.py",
+    "codePath": "trainppo.py",
+    "git": {
+        "remote": "https://github.com/Sentdex/SC2RL.git",
+        "commit": "5b049844c6297e578c59f2b602757a28f24e8d52"
+    },
+    "email": "129771634+oh5050@users.noreply.github.com",
+    "root": "C:/Users/User/Documents/GitHub/SC2RL",
+    "host": "DESKTOP-8T4DMB3",
+    "username": "User",
+    "executable": "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 1600.0,
+        "min": 0.0,
+        "max": 1800.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1600.0,
+            "min": 0.0,
+            "max": 1800.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 237.4410171508789,
+            "used": 203.2727928161621
+        }
+    },
+    "memory": {
+        "total": 7.654090881347656
+    }
+}

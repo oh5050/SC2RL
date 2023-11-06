@@ -1,0 +1,45 @@
+diff --git a/test_model.py b/test_model.py
+index 589505f..4d2ade9 100644
+--- a/test_model.py
++++ b/test_model.py
+@@ -17,3 +17,27 @@ while not done:
+     action, _states = model.predict(obs)
+     obs, rewards, dones, info = env.step(action)
+ 
++# from stable_baselines3 import PPO
++# from sc2env import Sc2Env
++# import os
++
++# LOAD_MODEL = "models/1647915989/2880000.zip"
++
++# # Environment:
++# env = Sc2Env()
++
++# # Check if model exists, and if not, train and save one
++# if not os.path.exists(LOAD_MODEL):
++#     model = PPO("MlpPolicy", env, verbose=1)
++#     model.learn(total_timesteps=200000)  # You can adjust this value
++#     model.save(LOAD_MODEL)
++# else:
++#     # Load the model:
++#     model = PPO.load(LOAD_MODEL, env)
++
++# # Play the game:
++# obs = env.reset()
++# done = False
++# while not done:
++#     action, _states = model.predict(obs)
++#     obs, rewards, dones, info = env.step(action)
+diff --git a/trainppo.py b/trainppo.py
+index 29e60d0..7d3d283 100644
+--- a/trainppo.py
++++ b/trainppo.py
+@@ -20,7 +20,7 @@ conf_dict = {"Model": "v19",
+ 
+ run = wandb.init(
+     project=f'SC2RLv6',
+-    entity="sentdex",
++    entity="ericoh5050",
+     config=conf_dict,
+     sync_tensorboard=True,  # auto-upload sb3's tensorboard metrics
+     save_code=True,  # optional

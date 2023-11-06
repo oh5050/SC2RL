@@ -1,0 +1,28 @@
+2023-11-06 18:20:34,275 INFO    MainThread:12784 [wandb_setup.py:_flush():76] Current SDK version is 0.15.12
+2023-11-06 18:20:34,276 INFO    MainThread:12784 [wandb_setup.py:_flush():76] Configure stats pid to 12784
+2023-11-06 18:20:34,276 INFO    MainThread:12784 [wandb_setup.py:_flush():76] Loading settings from C:\Users\User\.config\wandb\settings
+2023-11-06 18:20:34,276 INFO    MainThread:12784 [wandb_setup.py:_flush():76] Loading settings from C:\Users\User\Documents\GitHub\SC2RL\wandb\settings
+2023-11-06 18:20:34,276 INFO    MainThread:12784 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-11-06 18:20:34,277 INFO    MainThread:12784 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-11-06 18:20:34,277 INFO    MainThread:12784 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'trainppo.py', 'program_abspath': 'c:\\Users\\User\\Documents\\GitHub\\SC2RL\\trainppo.py', 'program': 'c:\\Users\\User\\Documents\\GitHub\\SC2RL\\trainppo.py'}
+2023-11-06 18:20:34,278 INFO    MainThread:12784 [wandb_init.py:_log_setup():528] Logging user logs to C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231106_182034-7hzqh4sc\logs\debug.log
+2023-11-06 18:20:34,279 INFO    MainThread:12784 [wandb_init.py:_log_setup():529] Logging internal logs to C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231106_182034-7hzqh4sc\logs\debug-internal.log
+2023-11-06 18:20:34,279 INFO    MainThread:12784 [wandb_init.py:init():568] calling init triggers
+2023-11-06 18:20:34,280 INFO    MainThread:12784 [wandb_init.py:init():575] wandb.init called with sweep_config: {}
+config: {'Model': 'v19', 'Machine': 'Main', 'policy': 'MlpPolicy', 'model_save_name': '1699262428'}
+2023-11-06 18:20:34,280 INFO    MainThread:12784 [wandb_init.py:init():618] starting backend
+2023-11-06 18:20:34,280 INFO    MainThread:12784 [wandb_init.py:init():622] setting up manager
+2023-11-06 18:20:34,306 INFO    MainThread:12784 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=spawn, using: spawn
+2023-11-06 18:20:34,310 INFO    MainThread:12784 [wandb_init.py:init():628] backend started and connected
+2023-11-06 18:20:34,356 INFO    MainThread:12784 [wandb_init.py:init():720] updated telemetry
+2023-11-06 18:20:34,483 INFO    MainThread:12784 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2023-11-06 18:20:36,050 ERROR   MainThread:12784 [wandb_init.py:init():779] encountered error: It appears that you do not have permission to access the requested resource. Please reach out to the project owner to grant you access. If you have the correct permissions, verify that there are no issues with your networking setup.(Error 404: Not Found)
+2023-11-06 18:20:36,932 ERROR   MainThread:12784 [wandb_init.py:init():1188] It appears that you do not have permission to access the requested resource. Please reach out to the project owner to grant you access. If you have the correct permissions, verify that there are no issues with your networking setup.(Error 404: Not Found)
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\site-packages\wandb\sdk\wandb_init.py", line 1170, in init
+    run = wi.init()
+          ^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\site-packages\wandb\sdk\wandb_init.py", line 785, in init
+    raise error
+wandb.errors.CommError: It appears that you do not have permission to access the requested resource. Please reach out to the project owner to grant you access. If you have the correct permissions, verify that there are no issues with your networking setup.(Error 404: Not Found)
+2023-11-06 18:20:37,957 WARNING MsgRouterThr:12784 [router.py:message_loop():77] message_loop has been closed

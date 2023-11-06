@@ -24,24 +24,24 @@ step_punishment = ((np.exp(steps_for_pun**3)/10) - 0.1)*10
 class IncrediBot(BotAI): # inhereits from BotAI (part of BurnySC2)
     async def on_step(self, iteration: int): # on_step is a method that is called every step of the game.
         no_action = True
-        while no_action:
-            try:
-                with open('state_rwd_action.pkl', 'rb') as f:
-                    state_rwd_action = pickle.load(f)
+        # while no_action:
+        #     try:
+        #         with open('state_rwd_action.pkl', 'rb') as f:
+        #             state_rwd_action = pickle.load(f)
 
-                    if state_rwd_action['action'] is None:
-                        #print("No action yet")
-                        no_action = True
-                    else:
-                        #print("Action found")
-                        no_action = False
-            except:
-                pass
+        #             if state_rwd_action['action'] is None:
+        #                 #print("No action yet")
+        #                 no_action = True
+        #             else:
+        #                 #print("Action found")
+        #                 no_action = False
+        #     except:
+        #         pass
 
 
         await self.distribute_workers() # put idle workers back to work
 
-        action = state_rwd_action['action']
+        action = 0 #state_rwd_action['action']
         '''
         0: expand (ie: move to next spot, or build to 16 (minerals)+3 assemblers+3)
         1: build stargate (or up to one) (evenly)
@@ -324,7 +324,7 @@ class IncrediBot(BotAI): # inhereits from BotAI (part of BurnySC2)
 
 
 result = run_game(  # run_game is a function that runs the game.
-    maps.get("2000AtmospheresAIE"), # the map we are playing on
+    maps.get("Simple64"), #("2000AtmospheresAIE"), # the map we are playing on
     [Bot(Race.Protoss, IncrediBot()), # runs our coded bot, protoss race, and we pass our bot object 
      Computer(Race.Zerg, Difficulty.Hard)], # runs a pre-made computer agent, zerg race, with a hard difficulty.
     realtime=False, # When set to True, the agent is limited in how long each step can take to process.

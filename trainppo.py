@@ -20,7 +20,7 @@ conf_dict = {"Model": "v19",
 
 run = wandb.init(
     project=f'SC2RLv6',
-    entity="sentdex",
+    entity="sentdex", #"ericoh5050",
     config=conf_dict,
     sync_tensorboard=True,  # auto-upload sb3's tensorboard metrics
     save_code=True,  # optional
@@ -40,7 +40,9 @@ model = PPO('MlpPolicy', env, verbose=1, tensorboard_log=logdir)
 TIMESTEPS = 10000
 iters = 0
 while True:
-	print("On iteration: ", iters)
-	iters += 1
-	model.learn(total_timesteps=TIMESTEPS, reset_num_timesteps=False, tb_log_name=f"PPO")
-	model.save(f"{models_dir}/{TIMESTEPS*iters}")
+    print("On iteration: ", iters)
+    iters += 1
+    model.learn(total_timesteps=TIMESTEPS, reset_num_timesteps=False, tb_log_name=f"PPO")
+    model.save(f"{models_dir}/{TIMESTEPS*iters}")
+
+print("end")

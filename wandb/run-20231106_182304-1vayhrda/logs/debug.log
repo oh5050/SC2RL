@@ -1,0 +1,27 @@
+2023-11-06 18:23:04,103 INFO    MainThread:19564 [wandb_setup.py:_flush():76] Current SDK version is 0.15.12
+2023-11-06 18:23:04,104 INFO    MainThread:19564 [wandb_setup.py:_flush():76] Configure stats pid to 19564
+2023-11-06 18:23:04,104 INFO    MainThread:19564 [wandb_setup.py:_flush():76] Loading settings from C:\Users\User\.config\wandb\settings
+2023-11-06 18:23:04,105 INFO    MainThread:19564 [wandb_setup.py:_flush():76] Loading settings from C:\Users\User\Documents\GitHub\SC2RL\wandb\settings
+2023-11-06 18:23:04,105 INFO    MainThread:19564 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-11-06 18:23:04,106 INFO    MainThread:19564 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-11-06 18:23:04,108 INFO    MainThread:19564 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'trainppo.py', 'program_abspath': 'c:\\Users\\User\\Documents\\GitHub\\SC2RL\\trainppo.py', 'program': 'c:\\Users\\User\\Documents\\GitHub\\SC2RL\\trainppo.py'}
+2023-11-06 18:23:04,111 INFO    MainThread:19564 [wandb_init.py:_log_setup():528] Logging user logs to C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231106_182304-1vayhrda\logs\debug.log
+2023-11-06 18:23:04,114 INFO    MainThread:19564 [wandb_init.py:_log_setup():529] Logging internal logs to C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231106_182304-1vayhrda\logs\debug-internal.log
+2023-11-06 18:23:04,115 INFO    MainThread:19564 [wandb_init.py:init():568] calling init triggers
+2023-11-06 18:23:04,115 INFO    MainThread:19564 [wandb_init.py:init():575] wandb.init called with sweep_config: {}
+config: {'Model': 'v19', 'Machine': 'Main', 'policy': 'MlpPolicy', 'model_save_name': '1699262577'}
+2023-11-06 18:23:04,116 INFO    MainThread:19564 [wandb_init.py:init():618] starting backend
+2023-11-06 18:23:04,117 INFO    MainThread:19564 [wandb_init.py:init():622] setting up manager
+2023-11-06 18:23:04,186 INFO    MainThread:19564 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=spawn, using: spawn
+2023-11-06 18:23:04,197 INFO    MainThread:19564 [wandb_init.py:init():628] backend started and connected
+2023-11-06 18:23:04,240 INFO    MainThread:19564 [wandb_init.py:init():720] updated telemetry
+2023-11-06 18:23:04,360 INFO    MainThread:19564 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2023-11-06 18:23:05,989 INFO    MainThread:19564 [wandb_run.py:_on_init():2220] communicating current version
+2023-11-06 18:23:07,228 INFO    MainThread:19564 [wandb_run.py:_on_init():2229] got version response 
+2023-11-06 18:23:07,229 INFO    MainThread:19564 [wandb_init.py:init():804] starting run threads in backend
+2023-11-06 18:23:08,692 INFO    MainThread:19564 [wandb_run.py:_console_start():2199] atexit reg
+2023-11-06 18:23:08,693 INFO    MainThread:19564 [wandb_run.py:_redirect():2054] redirect: wrap_raw
+2023-11-06 18:23:08,693 INFO    MainThread:19564 [wandb_run.py:_redirect():2119] Wrapping output streams.
+2023-11-06 18:23:08,693 INFO    MainThread:19564 [wandb_run.py:_redirect():2144] Redirects installed.
+2023-11-06 18:23:08,695 INFO    MainThread:19564 [wandb_init.py:init():845] run started, returning control to user process
+2023-11-06 18:23:10,364 INFO    MainThread:19564 [wandb_run.py:_tensorboard_callback():1470] tensorboard callback: logs/1699262577/PPO_0, True
