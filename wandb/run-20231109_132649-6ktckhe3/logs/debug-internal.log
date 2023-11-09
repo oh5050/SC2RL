@@ -1,0 +1,512 @@
+2023-11-09 13:26:49,329 INFO    StreamThr :24284 [internal.py:wandb_internal():86] W&B internal server running at pid: 24284, started at: 2023-11-09 13:26:49.328729
+2023-11-09 13:26:49,333 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status
+2023-11-09 13:26:49,390 INFO    WriterThread:24284 [datastore.py:open_for_write():85] open: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_132649-6ktckhe3\run-6ktckhe3.wandb
+2023-11-09 13:26:49,392 DEBUG   SenderThread:24284 [sender.py:send():380] send: header
+2023-11-09 13:26:49,520 DEBUG   SenderThread:24284 [sender.py:send():380] send: run
+2023-11-09 13:26:51,450 INFO    SenderThread:24284 [dir_watcher.py:__init__():211] watching files in: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_132649-6ktckhe3\files
+2023-11-09 13:26:51,450 INFO    SenderThread:24284 [sender.py:_start_run_threads():1122] run started: 6ktckhe3 with start time 1699504009.330731
+2023-11-09 13:26:51,514 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: check_version
+2023-11-09 13:26:51,514 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: check_version
+2023-11-09 13:26:53,065 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: run_start
+2023-11-09 13:26:53,349 DEBUG   HandlerThread:24284 [system_info.py:__init__():32] System info init
+2023-11-09 13:26:53,349 DEBUG   HandlerThread:24284 [system_info.py:__init__():47] System info init done
+2023-11-09 13:26:53,349 INFO    HandlerThread:24284 [system_monitor.py:start():194] Starting system monitor
+2023-11-09 13:26:53,375 INFO    SystemMonitor:24284 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2023-11-09 13:26:53,376 INFO    HandlerThread:24284 [system_monitor.py:probe():214] Collecting system info
+2023-11-09 13:26:53,403 DEBUG   HandlerThread:24284 [system_info.py:probe():196] Probing system
+2023-11-09 13:26:53,403 INFO    SystemMonitor:24284 [interfaces.py:start():190] Started cpu monitoring
+2023-11-09 13:26:53,406 INFO    SystemMonitor:24284 [interfaces.py:start():190] Started disk monitoring
+2023-11-09 13:26:53,429 INFO    SystemMonitor:24284 [interfaces.py:start():190] Started memory monitoring
+2023-11-09 13:26:53,438 DEBUG   HandlerThread:24284 [system_info.py:_probe_git():181] Probing git
+2023-11-09 13:26:53,527 INFO    SystemMonitor:24284 [interfaces.py:start():190] Started network monitoring
+2023-11-09 13:26:53,996 DEBUG   HandlerThread:24284 [system_info.py:_probe_git():189] Probing git done
+2023-11-09 13:26:53,996 DEBUG   HandlerThread:24284 [system_info.py:probe():244] Probing system done
+2023-11-09 13:26:53,996 DEBUG   HandlerThread:24284 [system_monitor.py:probe():223] {'os': 'Windows-10-10.0.19045-SP0', 'python': '3.11.5', 'heartbeatAt': '2023-11-09T04:26:53.403100', 'startedAt': '2023-11-09T04:26:49.247733', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'c:\\Users\\User\\Documents\\GitHub\\SC2RL\\trainppo.py', 'codePathLocal': 'trainppo.py', 'codePath': 'trainppo.py', 'git': {'remote': 'https://github.com/oh5050/SC2RL.git', 'commit': 'd11ad601e1b0ed2b327112880317245a684850cf'}, 'email': '129771634+oh5050@users.noreply.github.com', 'root': 'C:/Users/User/Documents/GitHub/SC2RL', 'host': 'DESKTOP-8T4DMB3', 'username': 'User', 'executable': 'C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', 'cpu_count': 4, 'cpu_count_logical': 8, 'cpu_freq': {'current': 1600.0, 'min': 0.0, 'max': 1800.0}, 'cpu_freq_per_core': [{'current': 1600.0, 'min': 0.0, 'max': 1800.0}], 'disk': {'/': {'total': 237.4410171508789, 'used': 205.10103607177734}}, 'memory': {'total': 7.654090881347656}}
+2023-11-09 13:26:53,997 INFO    HandlerThread:24284 [system_monitor.py:probe():224] Finished collecting system info
+2023-11-09 13:26:53,997 INFO    HandlerThread:24284 [system_monitor.py:probe():227] Publishing system info
+2023-11-09 13:26:53,997 DEBUG   HandlerThread:24284 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2023-11-09 13:26:53,999 DEBUG   HandlerThread:24284 [system_info.py:_save_pip():68] Saving pip packages done
+2023-11-09 13:26:53,999 DEBUG   HandlerThread:24284 [system_info.py:_save_code():90] Saving code
+2023-11-09 13:26:54,161 DEBUG   HandlerThread:24284 [system_info.py:_save_code():111] Saving code done
+2023-11-09 13:26:54,161 DEBUG   HandlerThread:24284 [system_info.py:_save_patches():128] Saving git patches
+2023-11-09 13:26:54,641 INFO    Thread-16 :24284 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_132649-6ktckhe3\files\requirements.txt
+2023-11-09 13:26:54,642 INFO    Thread-16 :24284 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_132649-6ktckhe3\files\code\trainppo.py
+2023-11-09 13:26:54,643 INFO    Thread-16 :24284 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_132649-6ktckhe3\files\code
+2023-11-09 13:26:55,417 DEBUG   HandlerThread:24284 [system_info.py:_save_patches():170] Saving git patches done
+2023-11-09 13:26:55,422 INFO    HandlerThread:24284 [system_monitor.py:probe():229] Finished publishing system info
+2023-11-09 13:26:55,577 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:26:55,579 DEBUG   SenderThread:24284 [sender.py:send():380] send: files
+2023-11-09 13:26:55,579 INFO    SenderThread:24284 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2023-11-09 13:26:55,582 INFO    SenderThread:24284 [sender.py:_save_file():1378] saving file code\trainppo.py with policy now
+2023-11-09 13:26:55,588 INFO    SenderThread:24284 [sender.py:_save_file():1378] saving file diff.patch with policy now
+2023-11-09 13:26:55,876 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:26:55,877 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:26:55,887 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:26:55,897 INFO    Thread-16 :24284 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_132649-6ktckhe3\files\diff.patch
+2023-11-09 13:26:55,899 INFO    Thread-16 :24284 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_132649-6ktckhe3\files\wandb-metadata.json
+2023-11-09 13:26:58,715 DEBUG   SenderThread:24284 [sender.py:send():380] send: telemetry
+2023-11-09 13:26:58,979 INFO    wandb-upload_0:24284 [upload_job.py:push():131] Uploaded file C:\Users\User\AppData\Local\Temp\tmpcz5qs4d7wandb\vm2hanxw-wandb-metadata.json
+2023-11-09 13:26:59,082 INFO    Thread-16 :24284 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_132649-6ktckhe3\files\output.log
+2023-11-09 13:27:00,425 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:27:00,919 INFO    HandlerThread:24284 [handler.py:handle_tbrecord():764] handling tbrecord: tbrecord {
+  log_dir: "logs/1699504002/PPO_0"
+  save: true
+}
+control {
+  relay_id: "8276f2079e2c4c168cd726863deff354"
+}
+_info {
+  stream_id: "6ktckhe3"
+}
+
+2023-11-09 13:27:00,921 DEBUG   HandlerThread:24284 [config_util.py:dict_from_config_file():101] no default config file found in config-defaults.yaml
+2023-11-09 13:27:01,320 INFO    Thread-16 :24284 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_132649-6ktckhe3\files\output.log
+2023-11-09 13:27:01,330 INFO    wandb-upload_1:24284 [upload_job.py:push():131] Uploaded file C:\Users\User\AppData\Local\Temp\tmpcz5qs4d7wandb\cea6yae2-code/trainppo.py
+2023-11-09 13:27:01,553 DEBUG   SenderThread:24284 [sender.py:send():380] send: tbrecord
+2023-11-09 13:27:01,562 DEBUG   Thread-34 (_thread_except_body):24284 [tb_watcher.py:_process_events():284] Encountered tensorboard directory watcher error: [WinError 1314] 클라이언트가 필요한 권한을 가지고 있지 않습니다: 'C:\\Users\\User\\Documents\\GitHub\\SC2RL\\logs\\1699504002\\PPO_0\\events.out.tfevents.1699504020.DESKTOP-8T4DMB3.19724.0' -> 'C:\\Users\\User\\Documents\\GitHub\\SC2RL\\wandb\\run-20231109_132649-6ktckhe3\\files\\events.out.tfevents.1699504020.DESKTOP-8T4DMB3.19724.0'
+2023-11-09 13:27:01,838 INFO    wandb-upload_2:24284 [upload_job.py:push():131] Uploaded file C:\Users\User\AppData\Local\Temp\tmpcz5qs4d7wandb\py5vsxa2-diff.patch
+2023-11-09 13:27:03,542 INFO    Thread-16 :24284 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_132649-6ktckhe3\files\output.log
+2023-11-09 13:27:05,661 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:27:10,629 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:27:10,630 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:27:10,646 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:27:10,862 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:27:15,906 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:27:20,949 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:27:21,636 INFO    Thread-16 :24284 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_132649-6ktckhe3\files\config.yaml
+2023-11-09 13:27:25,644 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:27:25,644 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:27:25,661 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:27:26,912 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:27:32,034 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:27:37,089 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:27:40,817 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:27:40,818 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:27:40,819 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:27:42,195 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:27:47,229 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:27:52,321 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:27:53,649 DEBUG   SystemMonitor:24284 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2023-11-09 13:27:53,653 DEBUG   SenderThread:24284 [sender.py:send():380] send: stats
+2023-11-09 13:27:53,832 ERROR   FileStreamThread:24284 [file_stream.py:_handle_response():504] dropped chunk 404 Client Error: Not Found for url: https://api.wandb.ai/files/ericoh5050/SC2RLv6/6ktckhe3/file_stream
+NoneType: None
+2023-11-09 13:27:55,741 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:27:55,741 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:27:55,743 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:27:58,016 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:28:03,132 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:28:08,456 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:28:10,692 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:28:10,692 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:28:10,693 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:28:14,001 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:28:19,047 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:28:23,661 DEBUG   SenderThread:24284 [sender.py:send():380] send: stats
+2023-11-09 13:28:23,856 ERROR   FileStreamThread:24284 [file_stream.py:_handle_response():504] dropped chunk 404 Client Error: Not Found for url: https://api.wandb.ai/files/ericoh5050/SC2RLv6/6ktckhe3/file_stream
+NoneType: None
+2023-11-09 13:28:24,671 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:28:25,688 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:28:25,688 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:28:25,705 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:28:30,039 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:28:35,078 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:28:40,183 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:28:40,696 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:28:40,696 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:28:40,712 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:28:46,002 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:28:51,046 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:28:53,676 DEBUG   SenderThread:24284 [sender.py:send():380] send: stats
+2023-11-09 13:28:53,866 ERROR   FileStreamThread:24284 [file_stream.py:_handle_response():504] dropped chunk 404 Client Error: Not Found for url: https://api.wandb.ai/files/ericoh5050/SC2RLv6/6ktckhe3/file_stream
+NoneType: None
+2023-11-09 13:28:55,685 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:28:55,686 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:28:55,701 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:28:56,933 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:29:01,969 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:29:07,013 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:29:10,692 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:29:10,692 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:29:10,709 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:29:12,945 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:29:17,995 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:29:23,058 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:29:23,679 DEBUG   SenderThread:24284 [sender.py:send():380] send: stats
+2023-11-09 13:29:23,901 ERROR   FileStreamThread:24284 [file_stream.py:_handle_response():504] dropped chunk 404 Client Error: Not Found for url: https://api.wandb.ai/files/ericoh5050/SC2RLv6/6ktckhe3/file_stream
+NoneType: None
+2023-11-09 13:29:25,705 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:29:25,705 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:29:25,721 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:29:28,949 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:29:34,021 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:29:39,072 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:29:40,705 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:29:40,705 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:29:40,737 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:29:44,083 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:29:49,126 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:29:53,686 DEBUG   SenderThread:24284 [sender.py:send():380] send: stats
+2023-11-09 13:29:53,975 ERROR   FileStreamThread:24284 [file_stream.py:_handle_response():504] dropped chunk 404 Client Error: Not Found for url: https://api.wandb.ai/files/ericoh5050/SC2RLv6/6ktckhe3/file_stream
+NoneType: None
+2023-11-09 13:29:54,698 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:29:55,711 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:29:55,712 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:29:55,743 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:30:00,043 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:30:05,070 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:30:10,114 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:30:10,714 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:30:10,714 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:30:10,744 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:30:16,120 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:30:21,171 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:30:23,698 DEBUG   SenderThread:24284 [sender.py:send():380] send: stats
+2023-11-09 13:30:23,876 ERROR   FileStreamThread:24284 [file_stream.py:_handle_response():504] dropped chunk 404 Client Error: Not Found for url: https://api.wandb.ai/files/ericoh5050/SC2RLv6/6ktckhe3/file_stream
+NoneType: None
+2023-11-09 13:30:25,736 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:30:25,737 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:30:25,737 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:30:27,035 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:30:32,203 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:30:37,264 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:30:40,765 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:30:40,765 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:30:40,766 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:30:43,105 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:30:48,169 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:30:53,250 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:30:53,713 DEBUG   SenderThread:24284 [sender.py:send():380] send: stats
+2023-11-09 13:30:53,980 ERROR   FileStreamThread:24284 [file_stream.py:_handle_response():504] dropped chunk 404 Client Error: Not Found for url: https://api.wandb.ai/files/ericoh5050/SC2RLv6/6ktckhe3/file_stream
+NoneType: None
+2023-11-09 13:30:55,741 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:30:55,741 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:30:55,757 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:30:59,043 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:31:04,095 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:31:09,145 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:31:10,748 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:31:10,749 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:31:10,764 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:31:15,003 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:31:20,033 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:31:23,726 DEBUG   SenderThread:24284 [sender.py:send():380] send: stats
+2023-11-09 13:31:23,988 ERROR   FileStreamThread:24284 [file_stream.py:_handle_response():504] dropped chunk 404 Client Error: Not Found for url: https://api.wandb.ai/files/ericoh5050/SC2RLv6/6ktckhe3/file_stream
+NoneType: None
+2023-11-09 13:31:25,747 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:31:25,748 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:31:25,749 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:31:25,780 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:31:30,961 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:31:36,028 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:31:40,756 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:31:40,756 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:31:40,787 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:31:41,990 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:31:47,053 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:31:52,100 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:31:53,730 DEBUG   SenderThread:24284 [sender.py:send():380] send: stats
+2023-11-09 13:31:53,986 ERROR   FileStreamThread:24284 [file_stream.py:_handle_response():504] dropped chunk 404 Client Error: Not Found for url: https://api.wandb.ai/files/ericoh5050/SC2RLv6/6ktckhe3/file_stream
+NoneType: None
+2023-11-09 13:31:55,757 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:31:55,757 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:31:55,804 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:31:58,051 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:32:03,115 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:32:08,154 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:32:10,763 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:32:10,763 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:32:10,812 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:32:13,158 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:32:18,683 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:32:23,666 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:32:23,747 DEBUG   SenderThread:24284 [sender.py:send():380] send: stats
+2023-11-09 13:32:24,010 ERROR   FileStreamThread:24284 [file_stream.py:_handle_response():504] dropped chunk 404 Client Error: Not Found for url: https://api.wandb.ai/files/ericoh5050/SC2RLv6/6ktckhe3/file_stream
+NoneType: None
+2023-11-09 13:32:25,789 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:32:25,791 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:32:25,821 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:32:29,175 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:32:34,228 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:32:39,328 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:32:40,786 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:32:40,787 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:32:40,816 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:32:45,047 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:32:50,102 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:32:53,760 DEBUG   SenderThread:24284 [sender.py:send():380] send: stats
+2023-11-09 13:32:53,994 ERROR   FileStreamThread:24284 [file_stream.py:_handle_response():504] dropped chunk 404 Client Error: Not Found for url: https://api.wandb.ai/files/ericoh5050/SC2RLv6/6ktckhe3/file_stream
+NoneType: None
+2023-11-09 13:32:55,785 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:32:55,785 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:32:55,786 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:32:55,833 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:33:01,161 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:33:06,217 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:33:10,799 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:33:10,799 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:33:10,845 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:33:12,104 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:33:17,141 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:33:22,205 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:33:23,776 DEBUG   SenderThread:24284 [sender.py:send():380] send: stats
+2023-11-09 13:33:23,946 ERROR   FileStreamThread:24284 [file_stream.py:_handle_response():504] dropped chunk 404 Client Error: Not Found for url: https://api.wandb.ai/files/ericoh5050/SC2RLv6/6ktckhe3/file_stream
+NoneType: None
+2023-11-09 13:33:25,821 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:33:25,822 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:33:25,848 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:33:28,158 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:33:33,207 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:33:38,266 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:33:40,833 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:33:40,834 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:33:40,865 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:33:44,225 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:33:49,240 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:33:53,790 DEBUG   SenderThread:24284 [sender.py:send():380] send: stats
+2023-11-09 13:33:53,999 ERROR   FileStreamThread:24284 [file_stream.py:_handle_response():504] dropped chunk 404 Client Error: Not Found for url: https://api.wandb.ai/files/ericoh5050/SC2RLv6/6ktckhe3/file_stream
+NoneType: None
+2023-11-09 13:33:54,791 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:33:55,831 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:33:55,833 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:33:55,884 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:34:00,179 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:34:05,230 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:34:10,377 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:34:10,836 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:34:10,837 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:34:10,884 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:34:16,260 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:34:21,297 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:34:23,805 DEBUG   SenderThread:24284 [sender.py:send():380] send: stats
+2023-11-09 13:34:24,004 ERROR   FileStreamThread:24284 [file_stream.py:_handle_response():504] dropped chunk 404 Client Error: Not Found for url: https://api.wandb.ai/files/ericoh5050/SC2RLv6/6ktckhe3/file_stream
+NoneType: None
+2023-11-09 13:34:25,834 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:34:25,835 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:34:25,880 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:34:27,156 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:34:32,186 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:34:37,282 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:34:40,841 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:34:40,842 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:34:40,890 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:34:43,228 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:34:48,267 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:34:53,315 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:34:53,818 DEBUG   SenderThread:24284 [sender.py:send():380] send: stats
+2023-11-09 13:34:54,004 ERROR   FileStreamThread:24284 [file_stream.py:_handle_response():504] dropped chunk 404 Client Error: Not Found for url: https://api.wandb.ai/files/ericoh5050/SC2RLv6/6ktckhe3/file_stream
+NoneType: None
+2023-11-09 13:34:55,861 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:34:55,862 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:34:55,906 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:34:59,186 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:35:04,206 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:35:09,251 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:35:10,869 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:35:10,870 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:35:10,915 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:35:15,140 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:35:20,198 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:35:23,828 DEBUG   SenderThread:24284 [sender.py:send():380] send: stats
+2023-11-09 13:35:24,008 ERROR   FileStreamThread:24284 [file_stream.py:_handle_response():504] dropped chunk 404 Client Error: Not Found for url: https://api.wandb.ai/files/ericoh5050/SC2RLv6/6ktckhe3/file_stream
+NoneType: None
+2023-11-09 13:35:25,850 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:35:25,876 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:35:25,876 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:35:25,914 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:35:31,184 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:35:36,223 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:35:40,872 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:35:40,872 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:35:40,919 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:35:42,215 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:35:47,264 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:35:52,330 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:35:53,833 DEBUG   SenderThread:24284 [sender.py:send():380] send: stats
+2023-11-09 13:35:54,011 ERROR   FileStreamThread:24284 [file_stream.py:_handle_response():504] dropped chunk 404 Client Error: Not Found for url: https://api.wandb.ai/files/ericoh5050/SC2RLv6/6ktckhe3/file_stream
+NoneType: None
+2023-11-09 13:35:55,887 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:35:55,888 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:35:55,933 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:35:58,198 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:36:03,296 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:36:08,567 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:36:10,904 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:36:10,905 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:36:10,950 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:36:14,123 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:36:19,246 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:36:23,841 DEBUG   SenderThread:24284 [sender.py:send():380] send: stats
+2023-11-09 13:36:24,009 ERROR   FileStreamThread:24284 [file_stream.py:_handle_response():504] dropped chunk 404 Client Error: Not Found for url: https://api.wandb.ai/files/ericoh5050/SC2RLv6/6ktckhe3/file_stream
+NoneType: None
+2023-11-09 13:36:24,854 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:36:25,921 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:36:25,921 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:36:25,953 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:36:30,288 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:36:35,350 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:36:40,372 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:36:40,930 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:36:40,931 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:36:40,963 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:36:46,180 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:36:51,314 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:36:53,857 DEBUG   SenderThread:24284 [sender.py:send():380] send: stats
+2023-11-09 13:36:54,102 ERROR   FileStreamThread:24284 [file_stream.py:_handle_response():504] dropped chunk 404 Client Error: Not Found for url: https://api.wandb.ai/files/ericoh5050/SC2RLv6/6ktckhe3/file_stream
+NoneType: None
+2023-11-09 13:36:55,923 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:36:55,924 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:36:55,955 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:36:57,164 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:37:02,215 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:37:07,326 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:37:10,940 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:37:10,941 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:37:10,972 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:37:13,236 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:37:18,289 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:37:23,327 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:37:23,865 DEBUG   SenderThread:24284 [sender.py:send():380] send: stats
+2023-11-09 13:37:24,123 ERROR   FileStreamThread:24284 [file_stream.py:_handle_response():504] dropped chunk 404 Client Error: Not Found for url: https://api.wandb.ai/files/ericoh5050/SC2RLv6/6ktckhe3/file_stream
+NoneType: None
+2023-11-09 13:37:25,944 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:37:25,945 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:37:25,975 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:37:29,206 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:37:34,271 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:37:39,332 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:37:40,953 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:37:40,954 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:37:40,981 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:37:45,191 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:37:50,243 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:37:53,879 DEBUG   SenderThread:24284 [sender.py:send():380] send: stats
+2023-11-09 13:37:54,059 ERROR   FileStreamThread:24284 [file_stream.py:_handle_response():504] dropped chunk 404 Client Error: Not Found for url: https://api.wandb.ai/files/ericoh5050/SC2RLv6/6ktckhe3/file_stream
+NoneType: None
+2023-11-09 13:37:55,903 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:37:55,969 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:37:55,971 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:37:55,998 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:38:01,261 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:38:06,404 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:38:10,969 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:38:10,970 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:38:11,001 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:38:12,333 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:38:17,368 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:38:22,406 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:38:23,883 DEBUG   SenderThread:24284 [sender.py:send():380] send: stats
+2023-11-09 13:38:24,129 ERROR   FileStreamThread:24284 [file_stream.py:_handle_response():504] dropped chunk 404 Client Error: Not Found for url: https://api.wandb.ai/files/ericoh5050/SC2RLv6/6ktckhe3/file_stream
+NoneType: None
+2023-11-09 13:38:25,977 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:38:25,978 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:38:26,008 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:38:28,314 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:38:33,349 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:38:38,407 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:38:40,975 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:38:40,976 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:38:41,023 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:38:44,264 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:38:49,321 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:38:53,890 DEBUG   SenderThread:24284 [sender.py:send():380] send: stats
+2023-11-09 13:38:54,112 ERROR   FileStreamThread:24284 [file_stream.py:_handle_response():504] dropped chunk 404 Client Error: Not Found for url: https://api.wandb.ai/files/ericoh5050/SC2RLv6/6ktckhe3/file_stream
+NoneType: None
+2023-11-09 13:38:54,952 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:38:55,968 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:38:55,969 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:38:56,032 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:39:00,315 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:39:05,413 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:39:10,449 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:39:10,976 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:39:10,976 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:39:11,039 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:39:16,297 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:39:21,423 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:39:23,895 DEBUG   SenderThread:24284 [sender.py:send():380] send: stats
+2023-11-09 13:39:24,135 ERROR   FileStreamThread:24284 [file_stream.py:_handle_response():504] dropped chunk 404 Client Error: Not Found for url: https://api.wandb.ai/files/ericoh5050/SC2RLv6/6ktckhe3/file_stream
+NoneType: None
+2023-11-09 13:39:25,970 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:39:25,970 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:39:26,050 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:39:27,186 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:39:32,202 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:39:37,356 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:39:40,967 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:39:40,968 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:39:41,063 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:39:43,255 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:39:48,300 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:39:53,351 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:39:53,911 DEBUG   SenderThread:24284 [sender.py:send():380] send: stats
+2023-11-09 13:39:54,088 ERROR   FileStreamThread:24284 [file_stream.py:_handle_response():504] dropped chunk 404 Client Error: Not Found for url: https://api.wandb.ai/files/ericoh5050/SC2RLv6/6ktckhe3/file_stream
+NoneType: None
+2023-11-09 13:39:55,977 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:39:55,978 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:39:56,070 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:39:59,206 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:40:04,258 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:40:09,382 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:40:10,974 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:40:10,975 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:40:11,091 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:40:15,229 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:40:20,275 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:40:23,926 DEBUG   SenderThread:24284 [sender.py:send():380] send: stats
+2023-11-09 13:40:24,098 ERROR   FileStreamThread:24284 [file_stream.py:_handle_response():504] dropped chunk 404 Client Error: Not Found for url: https://api.wandb.ai/files/ericoh5050/SC2RLv6/6ktckhe3/file_stream
+NoneType: None
+2023-11-09 13:40:25,945 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:40:25,979 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:40:25,980 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:40:26,087 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:40:31,321 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:40:36,415 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:40:40,978 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:40:40,979 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:40:41,090 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:40:42,358 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:40:47,398 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:40:52,560 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:40:53,939 DEBUG   SenderThread:24284 [sender.py:send():380] send: stats
+2023-11-09 13:40:54,114 ERROR   FileStreamThread:24284 [file_stream.py:_handle_response():504] dropped chunk 404 Client Error: Not Found for url: https://api.wandb.ai/files/ericoh5050/SC2RLv6/6ktckhe3/file_stream
+NoneType: None
+2023-11-09 13:40:55,975 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:40:55,975 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:40:56,100 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:40:58,215 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:41:03,303 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:41:08,709 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:41:10,987 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:41:10,987 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:41:11,113 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:41:14,275 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:41:19,308 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:41:23,949 DEBUG   SenderThread:24284 [sender.py:send():380] send: stats
+2023-11-09 13:41:24,148 ERROR   FileStreamThread:24284 [file_stream.py:_handle_response():504] dropped chunk 404 Client Error: Not Found for url: https://api.wandb.ai/files/ericoh5050/SC2RLv6/6ktckhe3/file_stream
+NoneType: None
+2023-11-09 13:41:24,954 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:41:25,992 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:41:25,992 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:41:26,120 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:41:30,341 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:41:35,372 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:41:40,433 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:41:41,002 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:41:41,003 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:41:41,112 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:41:46,385 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:41:51,442 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:41:53,964 DEBUG   SenderThread:24284 [sender.py:send():380] send: stats
+2023-11-09 13:41:54,253 ERROR   FileStreamThread:24284 [file_stream.py:_handle_response():504] dropped chunk 404 Client Error: Not Found for url: https://api.wandb.ai/files/ericoh5050/SC2RLv6/6ktckhe3/file_stream
+NoneType: None
+2023-11-09 13:41:56,025 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:41:56,025 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:41:56,120 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:41:57,338 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:42:02,419 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:42:07,478 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:42:11,039 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 13:42:11,040 DEBUG   SenderThread:24284 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 13:42:11,283 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 13:42:13,402 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 13:42:18,493 DEBUG   HandlerThread:24284 [handler.py:handle_request():146] handle_request: status_report

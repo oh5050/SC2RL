@@ -1,0 +1,18 @@
+diff --git a/incredibot-sct.py b/incredibot-sct.py
+index fdfd885..ea83fcf 100644
+--- a/incredibot-sct.py
++++ b/incredibot-sct.py
+@@ -315,8 +315,10 @@ class IncrediBot(BotAI): # inhereits from BotAI (part of BurnySC2)
+             print(f"Iter: {iteration}. RWD: {reward}. VR: {self.units(UnitTypeId.VOIDRAY).amount}")
+ 
+         # write the file: 
++        # observation(minimap), reward for this step, Action(None if waiting for action, otherwise 0,1,2,3,4,5), Is the game over
+         data = {"state": map, "reward": reward, "action": None, "done": False}  # empty action waiting for the next one!
+         with open('state_rwd_action.pkl', 'wb') as f:
++            # Save this dictionary as a file(pickle)
+             pickle.dump(data, f)
+ 
+         
+diff --git a/state_rwd_action.pkl b/state_rwd_action.pkl
+index 5fcd4e0..cdae586 100644
+Binary files a/state_rwd_action.pkl and b/state_rwd_action.pkl differ

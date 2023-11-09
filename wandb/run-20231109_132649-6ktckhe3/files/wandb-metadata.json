@@ -1,0 +1,45 @@
+{
+    "os": "Windows-10-10.0.19045-SP0",
+    "python": "3.11.5",
+    "heartbeatAt": "2023-11-09T04:26:53.403100",
+    "startedAt": "2023-11-09T04:26:49.247733",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "c:\\Users\\User\\Documents\\GitHub\\SC2RL\\trainppo.py",
+    "codePathLocal": "trainppo.py",
+    "codePath": "trainppo.py",
+    "git": {
+        "remote": "https://github.com/oh5050/SC2RL.git",
+        "commit": "d11ad601e1b0ed2b327112880317245a684850cf"
+    },
+    "email": "129771634+oh5050@users.noreply.github.com",
+    "root": "C:/Users/User/Documents/GitHub/SC2RL",
+    "host": "DESKTOP-8T4DMB3",
+    "username": "User",
+    "executable": "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 1600.0,
+        "min": 0.0,
+        "max": 1800.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1600.0,
+            "min": 0.0,
+            "max": 1800.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 237.4410171508789,
+            "used": 205.10103607177734
+        }
+    },
+    "memory": {
+        "total": 7.654090881347656
+    }
+}

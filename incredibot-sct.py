@@ -26,8 +26,9 @@ class IncrediBot(BotAI): # inhereits from BotAI (part of BurnySC2)
         no_action = True
         while no_action:
             try:
-                with open('state_rwd_action.pkl', 'rb') as f:
+                with open(r'C:\Users\User\Documents\GitHub\SC2RL\base=state_rwd_action.pkl', 'rb') as f:
                     state_rwd_action = pickle.load(f)
+                
 
                     if state_rwd_action['action'] is None:
                         #print("No action yet")
@@ -315,8 +316,10 @@ class IncrediBot(BotAI): # inhereits from BotAI (part of BurnySC2)
             print(f"Iter: {iteration}. RWD: {reward}. VR: {self.units(UnitTypeId.VOIDRAY).amount}")
 
         # write the file: 
+        # observation(minimap), reward for this step, Action(None if waiting for action, otherwise 0,1,2,3,4,5), Is the game over
         data = {"state": map, "reward": reward, "action": None, "done": False}  # empty action waiting for the next one!
         with open('state_rwd_action.pkl', 'wb') as f:
+            # Save this dictionary as a file(pickle)
             pickle.dump(data, f)
 
         
