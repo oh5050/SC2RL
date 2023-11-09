@@ -1,0 +1,217 @@
+2023-11-09 10:21:10,044 INFO    StreamThr :9472 [internal.py:wandb_internal():86] W&B internal server running at pid: 9472, started at: 2023-11-09 10:21:10.042292
+2023-11-09 10:21:10,047 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: status
+2023-11-09 10:21:10,114 INFO    WriterThread:9472 [datastore.py:open_for_write():85] open: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_102109-xrvpyhst\run-xrvpyhst.wandb
+2023-11-09 10:21:10,116 DEBUG   SenderThread:9472 [sender.py:send():380] send: header
+2023-11-09 10:21:10,280 DEBUG   SenderThread:9472 [sender.py:send():380] send: run
+2023-11-09 10:21:13,758 INFO    SenderThread:9472 [dir_watcher.py:__init__():211] watching files in: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_102109-xrvpyhst\files
+2023-11-09 10:21:13,758 INFO    SenderThread:9472 [sender.py:_start_run_threads():1122] run started: xrvpyhst with start time 1699492870.043291
+2023-11-09 10:21:13,829 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: check_version
+2023-11-09 10:21:13,829 DEBUG   SenderThread:9472 [sender.py:send_request():407] send_request: check_version
+2023-11-09 10:21:15,042 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: run_start
+2023-11-09 10:21:15,148 DEBUG   HandlerThread:9472 [system_info.py:__init__():32] System info init
+2023-11-09 10:21:15,148 DEBUG   HandlerThread:9472 [system_info.py:__init__():47] System info init done
+2023-11-09 10:21:15,148 INFO    HandlerThread:9472 [system_monitor.py:start():194] Starting system monitor
+2023-11-09 10:21:15,149 INFO    SystemMonitor:9472 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2023-11-09 10:21:15,149 INFO    HandlerThread:9472 [system_monitor.py:probe():214] Collecting system info
+2023-11-09 10:21:15,155 INFO    SystemMonitor:9472 [interfaces.py:start():190] Started cpu monitoring
+2023-11-09 10:21:15,159 DEBUG   HandlerThread:9472 [system_info.py:probe():196] Probing system
+2023-11-09 10:21:15,160 INFO    SystemMonitor:9472 [interfaces.py:start():190] Started disk monitoring
+2023-11-09 10:21:15,170 INFO    SystemMonitor:9472 [interfaces.py:start():190] Started memory monitoring
+2023-11-09 10:21:15,221 INFO    SystemMonitor:9472 [interfaces.py:start():190] Started network monitoring
+2023-11-09 10:21:15,275 DEBUG   HandlerThread:9472 [system_info.py:_probe_git():181] Probing git
+2023-11-09 10:21:15,554 DEBUG   HandlerThread:9472 [system_info.py:_probe_git():189] Probing git done
+2023-11-09 10:21:15,554 DEBUG   HandlerThread:9472 [system_info.py:probe():244] Probing system done
+2023-11-09 10:21:15,554 DEBUG   HandlerThread:9472 [system_monitor.py:probe():223] {'os': 'Windows-10-10.0.19045-SP0', 'python': '3.11.5', 'heartbeatAt': '2023-11-09T01:21:15.159288', 'startedAt': '2023-11-09T01:21:09.972291', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'c:\\Users\\User\\Documents\\GitHub\\SC2RL\\trainppo.py', 'codePathLocal': 'trainppo.py', 'codePath': 'trainppo.py', 'git': {'remote': 'https://github.com/oh5050/SC2RL.git', 'commit': '84d682b0f563d12b3321d08caeab1c88d06747cf'}, 'email': '129771634+oh5050@users.noreply.github.com', 'root': 'C:/Users/User/Documents/GitHub/SC2RL', 'host': 'DESKTOP-8T4DMB3', 'username': 'User', 'executable': 'C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', 'cpu_count': 4, 'cpu_count_logical': 8, 'cpu_freq': {'current': 1600.0, 'min': 0.0, 'max': 1800.0}, 'cpu_freq_per_core': [{'current': 1600.0, 'min': 0.0, 'max': 1800.0}], 'disk': {'/': {'total': 237.4410171508789, 'used': 205.25797271728516}}, 'memory': {'total': 7.654090881347656}}
+2023-11-09 10:21:15,554 INFO    HandlerThread:9472 [system_monitor.py:probe():224] Finished collecting system info
+2023-11-09 10:21:15,555 INFO    HandlerThread:9472 [system_monitor.py:probe():227] Publishing system info
+2023-11-09 10:21:15,555 DEBUG   HandlerThread:9472 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2023-11-09 10:21:15,556 DEBUG   HandlerThread:9472 [system_info.py:_save_pip():68] Saving pip packages done
+2023-11-09 10:21:15,557 DEBUG   HandlerThread:9472 [system_info.py:_save_code():90] Saving code
+2023-11-09 10:21:15,698 DEBUG   HandlerThread:9472 [system_info.py:_save_code():111] Saving code done
+2023-11-09 10:21:15,698 DEBUG   HandlerThread:9472 [system_info.py:_save_patches():128] Saving git patches
+2023-11-09 10:21:15,772 INFO    Thread-16 :9472 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_102109-xrvpyhst\files\code\trainppo.py
+2023-11-09 10:21:15,773 INFO    Thread-16 :9472 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_102109-xrvpyhst\files\requirements.txt
+2023-11-09 10:21:15,774 INFO    Thread-16 :9472 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_102109-xrvpyhst\files\code
+2023-11-09 10:21:16,790 INFO    Thread-16 :9472 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_102109-xrvpyhst\files\diff.patch
+2023-11-09 10:21:17,103 DEBUG   HandlerThread:9472 [system_info.py:_save_patches():170] Saving git patches done
+2023-11-09 10:21:17,106 INFO    HandlerThread:9472 [system_monitor.py:probe():229] Finished publishing system info
+2023-11-09 10:21:17,198 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 10:21:17,200 DEBUG   SenderThread:9472 [sender.py:send():380] send: files
+2023-11-09 10:21:17,200 INFO    SenderThread:9472 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2023-11-09 10:21:17,204 INFO    SenderThread:9472 [sender.py:_save_file():1378] saving file code\trainppo.py with policy now
+2023-11-09 10:21:17,207 INFO    SenderThread:9472 [sender.py:_save_file():1378] saving file diff.patch with policy now
+2023-11-09 10:21:17,250 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-09 10:21:17,252 DEBUG   SenderThread:9472 [sender.py:send_request():407] send_request: stop_status
+2023-11-09 10:21:17,597 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 10:21:17,817 INFO    Thread-16 :9472 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_102109-xrvpyhst\files\diff.patch
+2023-11-09 10:21:17,818 INFO    Thread-16 :9472 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_102109-xrvpyhst\files\wandb-metadata.json
+2023-11-09 10:21:21,271 INFO    wandb-upload_0:9472 [upload_job.py:push():131] Uploaded file C:\Users\User\AppData\Local\Temp\tmp80kgusdswandb\hwo7x25c-wandb-metadata.json
+2023-11-09 10:21:22,860 INFO    wandb-upload_2:9472 [upload_job.py:push():131] Uploaded file C:\Users\User\AppData\Local\Temp\tmp80kgusdswandb\lxtqeciy-diff.patch
+2023-11-09 10:21:23,007 DEBUG   SenderThread:9472 [sender.py:send():380] send: telemetry
+2023-11-09 10:21:23,008 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 10:21:23,165 INFO    Thread-16 :9472 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_102109-xrvpyhst\files\output.log
+2023-11-09 10:21:23,398 INFO    HandlerThread:9472 [handler.py:handle_tbrecord():764] handling tbrecord: tbrecord {
+  log_dir: "logs/1699492861/PPO_0"
+  save: true
+}
+control {
+  relay_id: "9cc31cb0a7934d3caac460fe8c540741"
+}
+_info {
+  stream_id: "xrvpyhst"
+}
+
+2023-11-09 10:21:23,400 DEBUG   HandlerThread:9472 [config_util.py:dict_from_config_file():101] no default config file found in config-defaults.yaml
+2023-11-09 10:21:23,695 INFO    wandb-upload_1:9472 [upload_job.py:push():131] Uploaded file C:\Users\User\AppData\Local\Temp\tmp80kgusdswandb\6hpux7hj-code/trainppo.py
+2023-11-09 10:21:24,747 DEBUG   SenderThread:9472 [sender.py:send():380] send: tbrecord
+2023-11-09 10:21:24,748 DEBUG   SenderThread:9472 [sender.py:send():380] send: exit
+2023-11-09 10:21:24,749 INFO    SenderThread:9472 [sender.py:send_exit():585] handling exit code: 1
+2023-11-09 10:21:24,749 INFO    SenderThread:9472 [sender.py:send_exit():587] handling runtime: 9
+2023-11-09 10:21:24,754 INFO    SenderThread:9472 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-09 10:21:24,756 INFO    SenderThread:9472 [sender.py:send_exit():593] send defer
+2023-11-09 10:21:24,757 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: defer
+2023-11-09 10:21:24,757 INFO    HandlerThread:9472 [handler.py:handle_request_defer():172] handle defer: 0
+2023-11-09 10:21:24,758 DEBUG   SenderThread:9472 [sender.py:send_request():407] send_request: defer
+2023-11-09 10:21:24,759 INFO    SenderThread:9472 [sender.py:send_request_defer():609] handle sender defer: 0
+2023-11-09 10:21:24,759 INFO    SenderThread:9472 [sender.py:transition_state():613] send defer: 1
+2023-11-09 10:21:24,760 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: defer
+2023-11-09 10:21:24,761 INFO    HandlerThread:9472 [handler.py:handle_request_defer():172] handle defer: 1
+2023-11-09 10:21:24,761 DEBUG   SenderThread:9472 [sender.py:send_request():407] send_request: defer
+2023-11-09 10:21:24,762 INFO    SenderThread:9472 [sender.py:send_request_defer():609] handle sender defer: 1
+2023-11-09 10:21:24,762 INFO    SenderThread:9472 [sender.py:transition_state():613] send defer: 2
+2023-11-09 10:21:24,763 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: defer
+2023-11-09 10:21:24,763 INFO    HandlerThread:9472 [handler.py:handle_request_defer():172] handle defer: 2
+2023-11-09 10:21:24,763 INFO    HandlerThread:9472 [system_monitor.py:finish():203] Stopping system monitor
+2023-11-09 10:21:24,764 DEBUG   SystemMonitor:9472 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2023-11-09 10:21:24,765 DEBUG   SystemMonitor:9472 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2023-11-09 10:21:24,765 DEBUG   Thread-34 (_thread_except_body):9472 [tb_watcher.py:_process_events():284] Encountered tensorboard directory watcher error: [WinError 1314] 클라이언트가 필요한 권한을 가지고 있지 않습니다: 'C:\\Users\\User\\Documents\\GitHub\\SC2RL\\logs\\1699492861\\PPO_0\\events.out.tfevents.1699492883.DESKTOP-8T4DMB3.22848.0' -> 'C:\\Users\\User\\Documents\\GitHub\\SC2RL\\wandb\\run-20231109_102109-xrvpyhst\\files\\events.out.tfevents.1699492883.DESKTOP-8T4DMB3.22848.0'
+2023-11-09 10:21:24,766 DEBUG   SystemMonitor:9472 [system_monitor.py:_start():183] Publishing last batch of metrics
+2023-11-09 10:21:24,766 INFO    HandlerThread:9472 [interfaces.py:finish():202] Joined cpu monitor
+2023-11-09 10:21:24,770 INFO    HandlerThread:9472 [interfaces.py:finish():202] Joined disk monitor
+2023-11-09 10:21:24,771 INFO    HandlerThread:9472 [interfaces.py:finish():202] Joined memory monitor
+2023-11-09 10:21:24,771 INFO    HandlerThread:9472 [interfaces.py:finish():202] Joined network monitor
+2023-11-09 10:21:24,775 DEBUG   SenderThread:9472 [sender.py:send_request():407] send_request: defer
+2023-11-09 10:21:24,775 INFO    SenderThread:9472 [sender.py:send_request_defer():609] handle sender defer: 2
+2023-11-09 10:21:24,776 INFO    SenderThread:9472 [sender.py:transition_state():613] send defer: 3
+2023-11-09 10:21:24,777 DEBUG   SenderThread:9472 [sender.py:send():380] send: stats
+2023-11-09 10:21:24,778 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: defer
+2023-11-09 10:21:24,780 INFO    HandlerThread:9472 [handler.py:handle_request_defer():172] handle defer: 3
+2023-11-09 10:21:24,781 DEBUG   SenderThread:9472 [sender.py:send_request():407] send_request: defer
+2023-11-09 10:21:24,781 INFO    SenderThread:9472 [sender.py:send_request_defer():609] handle sender defer: 3
+2023-11-09 10:21:24,782 INFO    SenderThread:9472 [sender.py:transition_state():613] send defer: 4
+2023-11-09 10:21:24,783 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: defer
+2023-11-09 10:21:24,783 INFO    HandlerThread:9472 [handler.py:handle_request_defer():172] handle defer: 4
+2023-11-09 10:21:25,379 INFO    Thread-16 :9472 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_102109-xrvpyhst\files\output.log
+2023-11-09 10:21:25,380 INFO    Thread-16 :9472 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_102109-xrvpyhst\files\wandb-summary.json
+2023-11-09 10:21:35,494 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: poll_exit
+2023-11-09 10:21:35,496 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 10:21:35,495 DEBUG   SenderThread:9472 [sender.py:send_request():407] send_request: defer
+2023-11-09 10:21:35,501 INFO    SenderThread:9472 [sender.py:send_request_defer():609] handle sender defer: 4
+2023-11-09 10:21:35,501 INFO    SenderThread:9472 [sender.py:transition_state():613] send defer: 5
+2023-11-09 10:21:35,496 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-09 10:21:35,502 DEBUG   SenderThread:9472 [sender.py:send_request():407] send_request: poll_exit
+2023-11-09 10:21:35,503 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 10:21:35,504 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-09 10:21:35,505 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: defer
+2023-11-09 10:21:35,505 INFO    HandlerThread:9472 [handler.py:handle_request_defer():172] handle defer: 5
+2023-11-09 10:21:35,506 DEBUG   SenderThread:9472 [sender.py:send():380] send: summary
+2023-11-09 10:21:35,512 INFO    SenderThread:9472 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-11-09 10:21:35,513 DEBUG   SenderThread:9472 [sender.py:send_request():407] send_request: defer
+2023-11-09 10:21:35,514 INFO    SenderThread:9472 [sender.py:send_request_defer():609] handle sender defer: 5
+2023-11-09 10:21:35,515 INFO    SenderThread:9472 [sender.py:transition_state():613] send defer: 6
+2023-11-09 10:21:35,522 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: defer
+2023-11-09 10:21:35,523 INFO    HandlerThread:9472 [handler.py:handle_request_defer():172] handle defer: 6
+2023-11-09 10:21:35,527 DEBUG   SenderThread:9472 [sender.py:send_request():407] send_request: defer
+2023-11-09 10:21:35,527 INFO    SenderThread:9472 [sender.py:send_request_defer():609] handle sender defer: 6
+2023-11-09 10:21:35,537 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 10:21:35,818 INFO    SenderThread:9472 [sender.py:transition_state():613] send defer: 7
+2023-11-09 10:21:35,818 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: defer
+2023-11-09 10:21:35,819 INFO    HandlerThread:9472 [handler.py:handle_request_defer():172] handle defer: 7
+2023-11-09 10:21:35,820 DEBUG   SenderThread:9472 [sender.py:send_request():407] send_request: defer
+2023-11-09 10:21:35,820 INFO    SenderThread:9472 [sender.py:send_request_defer():609] handle sender defer: 7
+2023-11-09 10:21:36,517 INFO    Thread-16 :9472 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_102109-xrvpyhst\files\config.yaml
+2023-11-09 10:21:36,519 INFO    Thread-16 :9472 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_102109-xrvpyhst\files\wandb-summary.json
+2023-11-09 10:21:37,181 INFO    SenderThread:9472 [sender.py:transition_state():613] send defer: 8
+2023-11-09 10:21:37,186 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: defer
+2023-11-09 10:21:37,191 INFO    HandlerThread:9472 [handler.py:handle_request_defer():172] handle defer: 8
+2023-11-09 10:21:37,204 DEBUG   SenderThread:9472 [sender.py:send_request():407] send_request: defer
+2023-11-09 10:21:37,204 INFO    SenderThread:9472 [sender.py:send_request_defer():609] handle sender defer: 8
+2023-11-09 10:21:37,205 INFO    SenderThread:9472 [job_builder.py:build():281] Attempting to build job artifact
+2023-11-09 10:21:37,244 INFO    SenderThread:9472 [job_builder.py:_get_source_type():393] is repo sourced job
+2023-11-09 10:21:37,571 INFO    Thread-16 :9472 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_102109-xrvpyhst\files\output.log
+2023-11-09 10:21:38,093 INFO    SenderThread:9472 [job_builder.py:build():369] adding wandb-job metadata file
+2023-11-09 10:21:38,122 INFO    SenderThread:9472 [sender.py:transition_state():613] send defer: 9
+2023-11-09 10:21:38,124 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: defer
+2023-11-09 10:21:38,124 DEBUG   SenderThread:9472 [sender.py:send():380] send: artifact
+2023-11-09 10:21:38,124 INFO    HandlerThread:9472 [handler.py:handle_request_defer():172] handle defer: 9
+2023-11-09 10:21:40,306 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-09 10:21:42,625 INFO    wandb-upload_0:9472 [upload_job.py:push():89] Uploaded file C:\Users\User\AppData\Local\wandb\wandb\artifacts\staging\tmphd6egeu4
+2023-11-09 10:21:42,626 INFO    wandb-upload_1:9472 [upload_job.py:push():89] Uploaded file C:\Users\User\AppData\Local\wandb\wandb\artifacts\staging\tmp6vz6ry4y
+2023-11-09 10:21:42,626 INFO    wandb-upload_2:9472 [upload_job.py:push():89] Uploaded file C:\Users\User\AppData\Local\wandb\wandb\artifacts\staging\tmpwer4iu8r
+2023-11-09 10:21:45,234 INFO    SenderThread:9472 [sender.py:send_artifact():1456] sent artifact job-https___github.com_oh5050_SC2RL.git_trainppo.py - {'id': 'QXJ0aWZhY3Q6NjMyMzk4MzI0', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjExMzk4NjMzOQ==', 'latestArtifact': None}}
+2023-11-09 10:21:45,235 DEBUG   SenderThread:9472 [sender.py:send_request():407] send_request: defer
+2023-11-09 10:21:45,235 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: status_report
+2023-11-09 10:21:45,236 INFO    SenderThread:9472 [sender.py:send_request_defer():609] handle sender defer: 9
+2023-11-09 10:21:45,237 INFO    SenderThread:9472 [dir_watcher.py:finish():358] shutting down directory watcher
+2023-11-09 10:21:45,335 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-09 10:21:45,673 INFO    SenderThread:9472 [dir_watcher.py:finish():388] scan: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_102109-xrvpyhst\files
+2023-11-09 10:21:45,674 INFO    SenderThread:9472 [dir_watcher.py:finish():402] scan save: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_102109-xrvpyhst\files\config.yaml config.yaml
+2023-11-09 10:21:45,675 INFO    SenderThread:9472 [dir_watcher.py:finish():402] scan save: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_102109-xrvpyhst\files\diff.patch diff.patch
+2023-11-09 10:21:45,675 INFO    SenderThread:9472 [dir_watcher.py:finish():402] scan save: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_102109-xrvpyhst\files\output.log output.log
+2023-11-09 10:21:45,680 INFO    SenderThread:9472 [dir_watcher.py:finish():402] scan save: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_102109-xrvpyhst\files\requirements.txt requirements.txt
+2023-11-09 10:21:45,686 INFO    SenderThread:9472 [dir_watcher.py:finish():402] scan save: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_102109-xrvpyhst\files\wandb-metadata.json wandb-metadata.json
+2023-11-09 10:21:45,686 INFO    SenderThread:9472 [dir_watcher.py:finish():402] scan save: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_102109-xrvpyhst\files\wandb-summary.json wandb-summary.json
+2023-11-09 10:21:45,692 INFO    SenderThread:9472 [dir_watcher.py:finish():402] scan save: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_102109-xrvpyhst\files\code\trainppo.py code/trainppo.py
+2023-11-09 10:21:45,693 INFO    SenderThread:9472 [sender.py:transition_state():613] send defer: 10
+2023-11-09 10:21:45,695 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: defer
+2023-11-09 10:21:45,695 INFO    HandlerThread:9472 [handler.py:handle_request_defer():172] handle defer: 10
+2023-11-09 10:21:45,696 DEBUG   SenderThread:9472 [sender.py:send_request():407] send_request: defer
+2023-11-09 10:21:45,697 INFO    SenderThread:9472 [sender.py:send_request_defer():609] handle sender defer: 10
+2023-11-09 10:21:45,697 INFO    SenderThread:9472 [file_pusher.py:finish():175] shutting down file pusher
+2023-11-09 10:21:46,167 INFO    wandb-upload_0:9472 [upload_job.py:push():131] Uploaded file C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_102109-xrvpyhst\files\config.yaml
+2023-11-09 10:21:46,216 INFO    wandb-upload_3:9472 [upload_job.py:push():131] Uploaded file C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_102109-xrvpyhst\files\wandb-summary.json
+2023-11-09 10:21:48,069 INFO    wandb-upload_1:9472 [upload_job.py:push():131] Uploaded file C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_102109-xrvpyhst\files\requirements.txt
+2023-11-09 10:21:48,104 INFO    wandb-upload_2:9472 [upload_job.py:push():131] Uploaded file C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_102109-xrvpyhst\files\output.log
+2023-11-09 10:21:48,321 INFO    Thread-15 (_thread_body):9472 [sender.py:transition_state():613] send defer: 11
+2023-11-09 10:21:48,322 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: defer
+2023-11-09 10:21:48,323 INFO    HandlerThread:9472 [handler.py:handle_request_defer():172] handle defer: 11
+2023-11-09 10:21:48,324 DEBUG   SenderThread:9472 [sender.py:send_request():407] send_request: defer
+2023-11-09 10:21:48,324 INFO    SenderThread:9472 [sender.py:send_request_defer():609] handle sender defer: 11
+2023-11-09 10:21:48,324 INFO    SenderThread:9472 [file_pusher.py:join():181] waiting for file pusher
+2023-11-09 10:21:48,324 INFO    SenderThread:9472 [sender.py:transition_state():613] send defer: 12
+2023-11-09 10:21:48,325 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: defer
+2023-11-09 10:21:48,325 INFO    HandlerThread:9472 [handler.py:handle_request_defer():172] handle defer: 12
+2023-11-09 10:21:48,326 DEBUG   SenderThread:9472 [sender.py:send_request():407] send_request: defer
+2023-11-09 10:21:48,326 INFO    SenderThread:9472 [sender.py:send_request_defer():609] handle sender defer: 12
+2023-11-09 10:21:48,326 INFO    SenderThread:9472 [file_stream.py:finish():595] file stream finish called
+2023-11-09 10:21:48,634 INFO    SenderThread:9472 [file_stream.py:finish():599] file stream finish is done
+2023-11-09 10:21:48,634 INFO    SenderThread:9472 [sender.py:transition_state():613] send defer: 13
+2023-11-09 10:21:48,635 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: defer
+2023-11-09 10:21:48,635 INFO    HandlerThread:9472 [handler.py:handle_request_defer():172] handle defer: 13
+2023-11-09 10:21:48,636 DEBUG   SenderThread:9472 [sender.py:send_request():407] send_request: defer
+2023-11-09 10:21:48,636 INFO    SenderThread:9472 [sender.py:send_request_defer():609] handle sender defer: 13
+2023-11-09 10:21:48,637 INFO    SenderThread:9472 [sender.py:transition_state():613] send defer: 14
+2023-11-09 10:21:48,638 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: defer
+2023-11-09 10:21:48,638 DEBUG   SenderThread:9472 [sender.py:send():380] send: final
+2023-11-09 10:21:48,638 INFO    HandlerThread:9472 [handler.py:handle_request_defer():172] handle defer: 14
+2023-11-09 10:21:48,638 DEBUG   SenderThread:9472 [sender.py:send():380] send: footer
+2023-11-09 10:21:48,639 DEBUG   SenderThread:9472 [sender.py:send_request():407] send_request: defer
+2023-11-09 10:21:48,639 INFO    SenderThread:9472 [sender.py:send_request_defer():609] handle sender defer: 14
+2023-11-09 10:21:48,641 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: poll_exit
+2023-11-09 10:21:48,641 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: server_info
+2023-11-09 10:21:48,641 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: get_summary
+2023-11-09 10:21:48,642 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: sampled_history
+2023-11-09 10:21:48,642 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-09 10:21:48,642 DEBUG   SenderThread:9472 [sender.py:send_request():407] send_request: poll_exit
+2023-11-09 10:21:48,643 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: job_info
+2023-11-09 10:21:48,644 DEBUG   SenderThread:9472 [sender.py:send_request():407] send_request: server_info
+2023-11-09 10:21:48,875 DEBUG   SenderThread:9472 [sender.py:send_request():407] send_request: job_info
+2023-11-09 10:21:48,876 INFO    MainThread:9472 [wandb_run.py:_footer_history_summary_info():3599] rendering history
+2023-11-09 10:21:48,876 INFO    MainThread:9472 [wandb_run.py:_footer_history_summary_info():3631] rendering summary
+2023-11-09 10:21:48,877 INFO    MainThread:9472 [wandb_run.py:_footer_sync_info():3558] logging synced files
+2023-11-09 10:21:48,881 DEBUG   HandlerThread:9472 [handler.py:handle_request():146] handle_request: shutdown
+2023-11-09 10:21:48,881 INFO    HandlerThread:9472 [handler.py:finish():866] shutting down handler
+2023-11-09 10:21:49,646 INFO    WriterThread:9472 [datastore.py:close():294] close: C:\Users\User\Documents\GitHub\SC2RL\wandb\run-20231109_102109-xrvpyhst\run-xrvpyhst.wandb
+2023-11-09 10:21:49,881 INFO    SenderThread:9472 [sender.py:finish():1534] shutting down sender
+2023-11-09 10:21:49,881 INFO    SenderThread:9472 [file_pusher.py:finish():175] shutting down file pusher
+2023-11-09 10:21:49,881 INFO    SenderThread:9472 [file_pusher.py:join():181] waiting for file pusher

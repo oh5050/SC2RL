@@ -1,0 +1,568 @@
+diff --git a/incredibot-sct.py b/incredibot-sct.py
+index 01540c6..fdfd885 100644
+--- a/incredibot-sct.py
++++ b/incredibot-sct.py
+@@ -24,48 +24,24 @@ step_punishment = ((np.exp(steps_for_pun**3)/10) - 0.1)*10
+ class IncrediBot(BotAI): # inhereits from BotAI (part of BurnySC2)
+     async def on_step(self, iteration: int): # on_step is a method that is called every step of the game.
+         no_action = True
+-
+-        # while no_action:
+-        #     try:
+-        #         with open('state_rwd_action.pkl', 'rb') as f:
+-        #             state_rwd_action = pickle.load(f)
+-
+-        #             if state_rwd_action['action'] is None:
+-        #                 #print("No action yet")
+-        #                 no_action = True
+-        #             else:
+-        #                 #print("Action found")
+-        #                 no_action = False
+-        #     except:
+-        #         pass
+-        max_attempts = 10  # 최대 시도 횟수
+-        attempts = 0
+-        delay = 1  # 1초의 지연 시간
+-
+-        while no_action and attempts < max_attempts:
++        while no_action:
+             try:
+                 with open('state_rwd_action.pkl', 'rb') as f:
+                     state_rwd_action = pickle.load(f)
+ 
+                     if state_rwd_action['action'] is None:
+-                        # 액션이 None일 경우 대기
+-                        attempts += 1
+-                        time.sleep(delay)
++                        #print("No action yet")
++                        no_action = True
+                     else:
+-                        # 액션을 찾았을 경우 루프 종료
++                        #print("Action found")
+                         no_action = False
+-            except Exception as e:  # 파일 읽기 오류 발생 시
+-                print(f"Error occurred: {e}")
+-                attempts += 1
+-                time.sleep(delay)
+-
+-        if attempts >= max_attempts:
+-            print("Max attempts reached without finding an action.")
++            except:
++                pass
+ 
+ 
+         await self.distribute_workers() # put idle workers back to work
+ 
+-        action = 0 #state_rwd_action['action']
++        action = state_rwd_action['action']
+         '''
+         0: expand (ie: move to next spot, or build to 16 (minerals)+3 assemblers+3)
+         1: build stargate (or up to one) (evenly)
+@@ -79,6 +55,7 @@ class IncrediBot(BotAI): # inhereits from BotAI (part of BurnySC2)
+         if action == 0:
+             try:
+                 found_something = False
++
+                 if self.supply_left < 4:
+                     # build pylons. 
+                     if self.already_pending(UnitTypeId.PYLON) == 0:
+@@ -281,7 +258,6 @@ class IncrediBot(BotAI): # inhereits from BotAI (part of BurnySC2)
+             pos = vespene.position
+             c = [255, 175, 255]
+             fraction = vespene.vespene_contents / 2250
+-
+             if vespene.is_visible:
+                 map[math.ceil(pos.y)][math.ceil(pos.x)] = [int(fraction*i) for i in c]
+             else:
+@@ -340,7 +316,6 @@ class IncrediBot(BotAI): # inhereits from BotAI (part of BurnySC2)
+ 
+         # write the file: 
+         data = {"state": map, "reward": reward, "action": None, "done": False}  # empty action waiting for the next one!
+-
+         with open('state_rwd_action.pkl', 'wb') as f:
+             pickle.dump(data, f)
+ 
+@@ -348,7 +323,7 @@ class IncrediBot(BotAI): # inhereits from BotAI (part of BurnySC2)
+ 
+ 
+ result = run_game(  # run_game is a function that runs the game.
+-    maps.get("Simple64"), #("2000AtmospheresAIE"), # the map we are playing on
++    maps.get("Simple64"), # the map we are playing on
+     [Bot(Race.Protoss, IncrediBot()), # runs our coded bot, protoss race, and we pass our bot object 
+      Computer(Race.Zerg, Difficulty.Hard)], # runs a pre-made computer agent, zerg race, with a hard difficulty.
+     realtime=False, # When set to True, the agent is limited in how long each step can take to process.
+diff --git a/incredibot-sct1.py b/incredibot-sct1.py
+index e85b768..18bd709 100644
+--- a/incredibot-sct1.py
++++ b/incredibot-sct1.py
+@@ -5,358 +5,119 @@ from sc2.player import Bot, Computer  #wrapper for whether or not the agent is o
+ from sc2 import maps  # maps method for loading maps to play in.
+ from sc2.ids.unit_typeid import UnitTypeId
+ import random
+-import cv2
+-import math
+-import numpy as np
+-import sys
+-import pickle
+-import time
+-
+-SAVE_REPLAY = True
+-
+-total_steps = 10000 
+-steps_for_pun = np.linspace(0, 1, total_steps)
+-step_punishment = ((np.exp(steps_for_pun**3)/10) - 0.1)*10
+ 
+ 
++class IncrediBot(BotAI): # Inhereits from BotAI (part of BurnySC2)
++    async def on_step(self, iteration: int): # on_step is a method that is called every step of the game
++        print(f"{iteration}, n_workers: {self.workers.amount}, n_idle_workers: {self.workers.idle.amount}, "
++              f"minerals: {self.minerals}, gas: {self.vespene}, cannons: {self.structures(UnitTypeId.PHOTONCANNON).amount}, "
++              f"pylons: {self.structures(UnitTypeId.PYLON).amount}, nexus: {self.structures(UnitTypeId.NEXUS).amount} "
++              f"gateways: {self.structures(UnitTypeId.GATEWAY).amount}, cybernetics cores: {self.structures(UnitTypeId.CYBERNETICSCORE).amount} "
++              f"stargates: {self.structures(UnitTypeId.STARGATE).amount}, voidrays: {self.units(UnitTypeId.VOIDRAY).amount}, supply: {self.supply_used}/{self.supply_cap}")
++        
+ 
+-class IncrediBot(BotAI):
+-    async def on_step(self, iteration: int):
++        # begin logic:
++        
+         await self.distribute_workers()  # 일꾼 분배
+ 
+-        action = self.get_action()  # action 추출
+-
+-        if action == 0:
+-            await self.expand_strategy()
+-        elif action == 1:
+-            await self.build_stargate_strategy()
+-        elif action == 2:
+-            await self.build_voidray_strategy()
+-        elif action == 3:
+-            await self.send_scout_strategy(iteration)
+-        elif action == 4:
+-            await self.attack_strategy()
+-        elif action == 5:
+-            await self.voidray_flee_strategy()
+-
+-        self.display_map(iteration)  # 맵 디스플레이
+-        reward = self.calculate_reward(iteration)  # 보상 계산
+-
+-    def get_action(self):
+-        # state_rwd_action을 가져오기 위해 pickle 파일을 확인합니다.
+-        while True:
+-            try:
+-                with open('state_rwd_action.pkl', 'rb') as f:
+-                    state_rwd_action = pickle.load(f)
+-                    if state_rwd_action['action'] is not None:
+-                        return state_rwd_action['action']
+-            except:
+-                pass
+-        '''
+-        0: expand (ie: move to next spot, or build to 16 (minerals)+3 assemblers+3)
+-        1: build stargate (or up to one) (evenly)
+-        2: build voidray (evenly)
+-        3: send scout (evenly/random/closest to enemy?)
+-        4: attack (known buildings, units, then enemy base, just go in logical order.)
+-        5: voidray flee (back to base)
+-        '''
+-
+-        # 0: expand (ie: move to next spot, or build to 16 (minerals)+3 assemblers+3)
+-    async def expand_strategy(self):
+-        try:
+-            found_something = False
+-            if self.supply_left < 4:
+-                # build pylons. 
+-                if self.already_pending(UnitTypeId.PYLON) == 0:
+-                    if self.can_afford(UnitTypeId.PYLON):
+-                        await self.build(UnitTypeId.PYLON, near=random.choice(self.townhalls))
+-                        found_something = True
+-
+-            if not found_something:
+-                for nexus in self.townhalls:
+-                    # get worker count for this nexus:
+-                    worker_count = len(self.workers.closer_than(10, nexus))
+-                    if worker_count < 22:  # 16+3+3
+-                        if nexus.is_idle and self.can_afford(UnitTypeId.PROBE):
+-                            nexus.train(UnitTypeId.PROBE)
+-                            found_something = True
+-
+-                    # have we built enough assimilators?
+-                    # find vespene geysers
+-                    for geyser in self.vespene_geyser.closer_than(10, nexus):
+-                        # build assimilator if there isn't one already:
+-                        if not self.can_afford(UnitTypeId.ASSIMILATOR):
+-                            break
+-                        if not self.structures(UnitTypeId.ASSIMILATOR).closer_than(2.0, geyser).exists:
+-                            await self.build(UnitTypeId.ASSIMILATOR, geyser)
+-                            found_something = True
+-
+-            if not found_something:
+-                if self.already_pending(UnitTypeId.NEXUS) == 0 and self.can_afford(UnitTypeId.NEXUS):
+-                    await self.expand_now()
+-
+-        except Exception as e:
+-            print(e)
+-
+-
+-        #1: build stargate (or up to one) (evenly)
+-    async def build_stargate_strategy(self):
+-        try:
+-            # iterate thru all nexus and see if these buildings are close
+-            for nexus in self.townhalls:
+-                # is there is not a gateway close:
+-                if not self.structures(UnitTypeId.GATEWAY).closer_than(10, nexus).exists:
+-                    # if we can afford it:
+-                    if self.can_afford(UnitTypeId.GATEWAY) and self.already_pending(UnitTypeId.GATEWAY) == 0:
+-                        # build gateway
+-                        await self.build(UnitTypeId.GATEWAY, near=nexus)
+-
+-                # if the is not a cybernetics core close:
+-                if not self.structures(UnitTypeId.CYBERNETICSCORE).closer_than(10, nexus).exists:
+-                    # if we can afford it:
+-                    if self.can_afford(UnitTypeId.CYBERNETICSCORE) and self.already_pending(UnitTypeId.CYBERNETICSCORE) == 0:
+-                        # build cybernetics core
+-                        await self.build(UnitTypeId.CYBERNETICSCORE, near=nexus)
+-
+-                # if there is not a stargate close:
+-                if not self.structures(UnitTypeId.STARGATE).closer_than(10, nexus).exists:
+-                    # if we can afford it:
+-                    if self.can_afford(UnitTypeId.STARGATE) and self.already_pending(UnitTypeId.STARGATE) == 0:
+-                        # build stargate
+-                        await self.build(UnitTypeId.STARGATE, near=nexus)
+-
+-        except Exception as e:
+-            print(e)
+-
+-
+-
+-        #2: build voidray (random stargate)
+-    async def build_voidray_strategy(self):
+-        try:
+-            if self.can_afford(UnitTypeId.VOIDRAY):
++        if self.townhalls: # do we have a nexus?
++            nexus = self.townhalls.random # select one (will just be one for now)
++
++        
++            # if we have less than 10 voidrays, build one:
++            if self.structures(UnitTypeId.VOIDRAY).amount < 10 and self.can_afford(UnitTypeId.VOIDRAY):
+                 for sg in self.structures(UnitTypeId.STARGATE).ready.idle:
+                     if self.can_afford(UnitTypeId.VOIDRAY):
+                         sg.train(UnitTypeId.VOIDRAY)
+ 
+-        except Exception as e:
+-            print(e)
+-
+-
+-        #3: send scout
+-    async def scout_strategy(self, iteration):
+-        try:
+-            # Ensure `self.last_sent` has been initialized
+-            if not hasattr(self, 'last_sent'):
+-                self.last_sent = 0
+-
+-            # Send a scout every 200 iterations
+-            if (iteration - self.last_sent) > 200:
+-                # Choose an idle probe if available, otherwise any probe
+-                if self.units(UnitTypeId.PROBE).idle.exists:
+-                    probe = random.choice(self.units(UnitTypeId.PROBE).idle)
+-                else:
+-                    probe = random.choice(self.units(UnitTypeId.PROBE))
+-                
+-                # Send the chosen probe towards the enemy base
+-                probe.attack(self.enemy_start_locations[0])
+-                self.last_sent = iteration
+-
+-        except Exception as e:
+-            print(e)
+-
+-
+-
+-        #4: attack (known buildings, units, then enemy base, just go in logical order.)
+-    async def attack_strategy(self):
+-        try:
+-            # Command all idle void rays to attack
+-            for voidray in self.units(UnitTypeId.VOIDRAY).idle:
+-                # If there are enemy units close to the void ray
+-                if self.enemy_units.closer_than(10, voidray):
+-                    voidray.attack(random.choice(self.enemy_units.closer_than(10, voidray)))
+-                # If there are enemy structures close to the void ray
+-                elif self.enemy_structures.closer_than(10, voidray):
+-                    voidray.attack(random.choice(self.enemy_structures.closer_than(10, voidray)))
+-                # If there are any enemy units
+-                elif self.enemy_units:
+-                    voidray.attack(random.choice(self.enemy_units))
+-                # If there are any enemy structures
+-                elif self.enemy_structures:
+-                    voidray.attack(random.choice(self.enemy_structures))
+-                # If none of the above, attack the enemy starting location
+-                elif self.enemy_start_locations:
+-                    voidray.attack(self.enemy_start_locations[0])
+-                    
+-        except Exception as e:
+-            print(e)
+ 
++            # leave room to build void rays
++            supply_remaining = self.supply_cap - self.supply_used
++            if nexus.is_idle and self.can_afford(UnitTypeId.PROBE) and supply_remaining > 4:
++                nexus.train(UnitTypeId.PROBE)
+ 
+-            
+-
+-        #5: voidray flee (back to base)
+-    async def voidray_retreat_strategy(self):
+-        # If there are any void rays
+-        if self.units(UnitTypeId.VOIDRAY).amount > 0:
+-            for vr in self.units(UnitTypeId.VOIDRAY):
+-                vr.attack(self.start_location)
+-
+-
+-
+-        map_size = self.game_info.map_size
+-        map = np.zeros((map_size[1], map_size[0], 3), dtype=np.uint8)
+-        # draw the minerals:
+-        for mineral in self.mineral_field:
+-            pos = mineral.position
+-            c = [175, 255, 255]
+-            fraction = mineral.mineral_contents / 1800
+-            if mineral.is_visible:
+-                #print(mineral.mineral_contents)
+-                map[math.ceil(pos.y)][math.ceil(pos.x)] = [int(fraction*i) for i in c]
+-            else:
+-                map[math.ceil(pos.y)][math.ceil(pos.x)] = [20,75,50]  
+-
+-
+-        # draw the enemy start location:
+-        for enemy_start_location in self.enemy_start_locations:
+-            pos = enemy_start_location
+-            c = [0, 0, 255]
+-            map[math.ceil(pos.y)][math.ceil(pos.x)] = c
+-
+-        # draw the enemy units:
+-        for enemy_unit in self.enemy_units:
+-            pos = enemy_unit.position
+-            c = [100, 0, 255]
+-            # get unit health fraction:
+-            fraction = enemy_unit.health / enemy_unit.health_max if enemy_unit.health_max > 0 else 0.0001
+-            map[math.ceil(pos.y)][math.ceil(pos.x)] = [int(fraction*i) for i in c]
+-
+-
+-        # draw the enemy structures:
+-        for enemy_structure in self.enemy_structures:
+-            pos = enemy_structure.position
+-            c = [0, 100, 255]
+-            # get structure health fraction:
+-            fraction = enemy_structure.health / enemy_structure.health_max if enemy_structure.health_max > 0 else 0.0001
+-            map[math.ceil(pos.y)][math.ceil(pos.x)] = [int(fraction*i) for i in c]
+-
+-        # draw our structures:
+-        for our_structure in self.structures:
+-            # if it's a nexus:
+-            if our_structure.type_id == UnitTypeId.NEXUS:
+-                pos = our_structure.position
+-                c = [255, 255, 175]
+-                # get structure health fraction:
+-                fraction = our_structure.health / our_structure.health_max if our_structure.health_max > 0 else 0.0001
+-                map[math.ceil(pos.y)][math.ceil(pos.x)] = [int(fraction*i) for i in c]
+-            
+-            else:
+-                pos = our_structure.position
+-                c = [0, 255, 175]
+-                # get structure health fraction:
+-                fraction = our_structure.health / our_structure.health_max if our_structure.health_max > 0 else 0.0001
+-                map[math.ceil(pos.y)][math.ceil(pos.x)] = [int(fraction*i) for i in c]
+-
+-
+-        # draw the vespene geysers:
+-        for vespene in self.vespene_geyser:
+-            # draw these after buildings, since assimilators go over them. 
+-            # tried to denote some way that assimilator was on top, couldnt 
+-            # come up with anything. Tried by positions, but the positions arent identical. ie:
+-            # vesp position: (50.5, 63.5) 
+-            # bldg positions: [(64.369873046875, 58.982421875), (52.85693359375, 51.593505859375),...]
+-            pos = vespene.position
+-            c = [255, 175, 255]
+-            fraction = vespene.vespene_contents / 2250
+-
+-            if vespene.is_visible:
+-                map[math.ceil(pos.y)][math.ceil(pos.x)] = [int(fraction*i) for i in c]
+-            else:
+-                map[math.ceil(pos.y)][math.ceil(pos.x)] = [50,20,75]
+-
+-        # draw our units:
+-        for our_unit in self.units:
+-            # if it is a voidray:
+-            if our_unit.type_id == UnitTypeId.VOIDRAY:
+-                pos = our_unit.position
+-                c = [255, 75 , 75]
+-                # get health:
+-                fraction = our_unit.health / our_unit.health_max if our_unit.health_max > 0 else 0.0001
+-                map[math.ceil(pos.y)][math.ceil(pos.x)] = [int(fraction*i) for i in c]
+-
+-
+-            else:
+-                pos = our_unit.position
+-                c = [175, 255, 0]
+-                # get health:
+-                fraction = our_unit.health / our_unit.health_max if our_unit.health_max > 0 else 0.0001
+-                map[math.ceil(pos.y)][math.ceil(pos.x)] = [int(fraction*i) for i in c]
+-
+-        # show map with opencv, resized to be larger:
+-        # horizontal flip:
+-
+-        cv2.imshow('map',cv2.flip(cv2.resize(map, None, fx=4, fy=4, interpolation=cv2.INTER_NEAREST), 0))
+-        cv2.waitKey(1)
+-
+-        if SAVE_REPLAY:
+-            # save map image into "replays dir"
+-            cv2.imwrite(f"replays/{int(time.time())}-{iteration}.png", map)
+-
+-
+-
+-        reward = 0
+-
+-        try:
+-            attack_count = 0
+-            # iterate through our void rays:
+-            for voidray in self.units(UnitTypeId.VOIDRAY):
+-                # if voidray is attacking and is in range of enemy unit:
+-                if voidray.is_attacking and voidray.target_in_range:
+-                    if self.enemy_units.closer_than(8, voidray) or self.enemy_structures.closer_than(8, voidray):
+-                        # reward += 0.005 # original was 0.005, decent results, but let's 3x it. 
+-                        reward += 0.015  
+-                        attack_count += 1
+-
+-        except Exception as e:
+-            print("reward",e)
+-            reward = 0
++        
++            # if we don't have "any" pylons, we'll build one close to the nexus.
++            elif not self.structures(UnitTypeId.PYLON) and self.already_pending(UnitTypeId.PYLON) == 0:
++                if self.can_afford(UnitTypeId.PYLON):
++                    await self.build(UnitTypeId.PYLON, near=nexus)
+ 
+         
+-        if iteration % 100 == 0:
+-            print(f"Iter: {iteration}. RWD: {reward}. VR: {self.units(UnitTypeId.VOIDRAY).amount}")
++            elif self.structures(UnitTypeId.PYLON).amount < 5:
++                if self.can_afford(UnitTypeId.PYLON):
++                    # build from the closest pylon towards the enenmy
++                    target_pylon = self.structures(UnitTypeId.PYLON).closest_to(self.enemy_start_locations[0])
++                    # build as far away from target_pylon as possible:
++                    pos = target_pylon.position.towards(self.enemy_start_locations[0], random.randrange(8, 15))
++                    await self.build(UnitTypeId.PYLON, near=pos)
+ 
+-        # write the file: 
+-        data = {"state": map, "reward": reward, "action": None, "done": False}  # empty action waiting for the next one!
+ 
+-        with open('state_rwd_action.pkl', 'wb') as f:
+-            pickle.dump(data, f)
+ 
+-        
++            elif self.structures(UnitTypeId.ASSIMILATOR).amount <= 1:
++                for nexus in self.structures(UnitTypeId.NEXUS):
++                    vespenes = self.vespene_geyser.closer_than(15, nexus)
++                    for vespene in vespenes:
++                        if self.can_afford(UnitTypeId.ASSIMILATOR) and not self.already_pending(UnitTypeId.ASSIMILATOR):
++                            await self.build(UnitTypeId.ASSIMILATOR, vespene)
++
++
++
++
++            elif not self.structures(UnitTypeId.FORGE): # if we don't have a forge:
++                if self.can_afford(UnitTypeId.FORGE): # and we can affod one:
++                    # build one near the Pylon that is closest to the nexus:
++                    await self.build(UnitTypeId.FORGE, near=self.structures(UnitTypeId.PYLON).closest_to(nexus))
++
++            # if we have less than 3 cannons, let's build some more if possible:
++            elif self.structures(UnitTypeId.FORGE).ready and self.structures(UnitTypeId.PHOTONCANNON).amount < 3:
++                if self.can_afford(UnitTypeId.PHOTONCANNON): # can we afford a cannon?
++                    await self.build(UnitTypeId.PHOTONCANNON, near=nexus) # build one near the nexus
++
++
++            # a gateway? this gets us towards cyb core > stargate > voidray
++            elif not self.structures(UnitTypeId.GATEWAY):
++                if self.can_afford(UnitTypeId.GATEWAY):
++                    await self.build(UnitTypeId.GATEWAY, near=self.structures(UnitTypeId.PYLON).closest_to(nexus))
++
++            # a cyber core? this gets us towards stargate > void ray
++            elif not self.structures(UnitTypeId.CYBERNETICSCORE):
++                if self.can_afford(UnitTypeId.CYBERNETICSCORE):
++                    await self.build(UnitTypeId.CYBERNETICSCORE, near=self.structures(UnitTypeId.PYLON).closest_to(nexus))
++
++            # a stargate? this gets us towards void ray
++            elif not self.structures(UnitTypeId.STARGATE):
++                if self.can_afford(UnitTypeId.STARGATE):
++                    await self.build(UnitTypeId.STARGATE, near=self.structures(UnitTypeId.PYLON).closest_to(nexus))
++
++
++
++        else:
++            if self.can_afford(UnitTypeId.NEXUS): # can we afford one?
++                await self.expand_now() # build one
++
++
++
++        # if we have more than 3 voidrays, lets's attack
++        if self.units(UnitTypeId.VOIDRAY).amount >= 3:
++            if self.enemy_units:
++                for vr in self.units(UnitTypeId.VOIDRAY).idle:
++                    vr.attack(random.choice(self.enemy_units))
++
++            elif self.enemy_structures:
++                for vr in self.units(UnitTypeId.VOIDRAY).idle:
++                    vr.attack(random.choice(self.enemy_structures))
++            
++            # otherwise attack enemy starting position
++            else: 
++                for vr in self.units(UnitTypeId.VOIDRAY).idle:
++                    vr.attack(self.enemy_start_locations[0])
++
++
+ 
+ 
+-result = run_game(
+-    maps.get("Simple64"),
+-    [Bot(Race.Protoss, IncrediBot()),
+-     Computer(Race.Zerg, Difficulty.Hard)],
+-    realtime=False,
+-)
+-
+-# Save the game result to a file
+-with open("results.txt", "a") as f:
+-    f.write(f"{result}\n")
+-
+-# Assigning reward based on the game result
+-if str(result) == "Result.Victory":
+-    rwd = 500
+-else:
+-    rwd = -500
+-
+-# Storing the final state, reward, and action (None)
+-data = {"state": map, "reward": rwd, "action": None, "done": True}
+-with open('state_rwd_action.pkl', 'wb') as f:
+-    pickle.dump(data, f)
+-
+-# Closing the visualization window
+-cv2.destroyAllWindows()
+-cv2.waitKey(1)
+-time.sleep(3)
+-sys.exit()
++run_game( # run game is a function that runs the game.
++    maps.get("Simple64"), # the map we are playing on
++    [Bot(Race.Protoss, IncrediBot()), # runs our coded bot, protoss race, and we pass out bot object
++     Computer(Race.Zerg, Difficulty.Hard)], # runs a pre-made computer agent, zerg race, with a hard difficulty.
++     realtime=False, # When set to True, the agent is limited in how long each step can take to procees.
++)
+\ No newline at end of file
+diff --git a/trainppo.py b/trainppo.py
+index 266676d..7cc4ec8 100644
+--- a/trainppo.py
++++ b/trainppo.py
+@@ -20,7 +20,7 @@ conf_dict = {"Model": "v19",
+ 
+ run = wandb.init(
+     project=f'SC2RLv6',
+-    entity="sentdex", #"ericoh5050",
++    entity="ericoh5050", #"sentdex",
+     config=conf_dict,
+     sync_tensorboard=True,  # auto-upload sb3's tensorboard metrics
+     save_code=True,  # optional

@@ -24,48 +24,24 @@ step_punishment = ((np.exp(steps_for_pun**3)/10) - 0.1)*10
 class IncrediBot(BotAI): # inhereits from BotAI (part of BurnySC2)
     async def on_step(self, iteration: int): # on_step is a method that is called every step of the game.
         no_action = True
-
-        # while no_action:
-        #     try:
-        #         with open('state_rwd_action.pkl', 'rb') as f:
-        #             state_rwd_action = pickle.load(f)
-
-        #             if state_rwd_action['action'] is None:
-        #                 #print("No action yet")
-        #                 no_action = True
-        #             else:
-        #                 #print("Action found")
-        #                 no_action = False
-        #     except:
-        #         pass
-        max_attempts = 10  # 최대 시도 횟수
-        attempts = 0
-        delay = 1  # 1초의 지연 시간
-
-        while no_action and attempts < max_attempts:
+        while no_action:
             try:
                 with open('state_rwd_action.pkl', 'rb') as f:
                     state_rwd_action = pickle.load(f)
 
                     if state_rwd_action['action'] is None:
-                        # 액션이 None일 경우 대기
-                        attempts += 1
-                        time.sleep(delay)
+                        #print("No action yet")
+                        no_action = True
                     else:
-                        # 액션을 찾았을 경우 루프 종료
+                        #print("Action found")
                         no_action = False
-            except Exception as e:  # 파일 읽기 오류 발생 시
-                print(f"Error occurred: {e}")
-                attempts += 1
-                time.sleep(delay)
-
-        if attempts >= max_attempts:
-            print("Max attempts reached without finding an action.")
+            except:
+                pass
 
 
         await self.distribute_workers() # put idle workers back to work
 
-        action = 0 #state_rwd_action['action']
+        action = state_rwd_action['action']
         '''
         0: expand (ie: move to next spot, or build to 16 (minerals)+3 assemblers+3)
         1: build stargate (or up to one) (evenly)
@@ -79,6 +55,7 @@ class IncrediBot(BotAI): # inhereits from BotAI (part of BurnySC2)
         if action == 0:
             try:
                 found_something = False
+
                 if self.supply_left < 4:
                     # build pylons. 
                     if self.already_pending(UnitTypeId.PYLON) == 0:
@@ -281,7 +258,6 @@ class IncrediBot(BotAI): # inhereits from BotAI (part of BurnySC2)
             pos = vespene.position
             c = [255, 175, 255]
             fraction = vespene.vespene_contents / 2250
-
             if vespene.is_visible:
                 map[math.ceil(pos.y)][math.ceil(pos.x)] = [int(fraction*i) for i in c]
             else:
@@ -340,7 +316,6 @@ class IncrediBot(BotAI): # inhereits from BotAI (part of BurnySC2)
 
         # write the file: 
         data = {"state": map, "reward": reward, "action": None, "done": False}  # empty action waiting for the next one!
-
         with open('state_rwd_action.pkl', 'wb') as f:
             pickle.dump(data, f)
 
@@ -348,7 +323,7 @@ class IncrediBot(BotAI): # inhereits from BotAI (part of BurnySC2)
 
 
 result = run_game(  # run_game is a function that runs the game.
-    maps.get("Simple64"), #("2000AtmospheresAIE"), # the map we are playing on
+    maps.get("Simple64"), # the map we are playing on
     [Bot(Race.Protoss, IncrediBot()), # runs our coded bot, protoss race, and we pass our bot object 
      Computer(Race.Zerg, Difficulty.Hard)], # runs a pre-made computer agent, zerg race, with a hard difficulty.
     realtime=False, # When set to True, the agent is limited in how long each step can take to process.
